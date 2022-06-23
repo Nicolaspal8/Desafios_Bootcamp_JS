@@ -1,0 +1,9 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+h3, div{
+    text-align: center;
+    margin-top: 10px;
+}
