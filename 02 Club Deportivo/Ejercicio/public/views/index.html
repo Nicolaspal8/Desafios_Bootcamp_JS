@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1 style="text-align:center;">Bienvenido al Club Deportivo</h1>
+    <div style="text-align:center;">
+        <form action="http://localhost:3000/crear">
+            <label for="nombreClub">Nombre: </label>
+            <input type="text" name="nombreClub">
+            <label for="precioClub">Precio: </label>
+            <input type="text" name="precioClub">
+            <button>Crear</button>
+        </form>
+        <a href="http://localhost:3000/deportes">Clubs</a>
+    </div>
+    <div style="text-align:center;">
+        <h2>Editar Precio de un Club</h2>
+        <form action="http://localhost:3000/editarPrecio">
+            <label for="nombreClub">Nombre: </label>
+            <input type="text" name="nombreClub">
+            <label for="precioClub">Precio: </label>
+            <input type="text" name="precioClub">
+            <button>Editar</button>
+        </form>
+    </div>
+    <div style="text-align:center;">
+        <h2>Eliminar Club</h2>
+        <form action="http://localhost:3000/eliminarClub">
+            <label for="nombreClub">Nombre: </label>
+            <input type="text" name="nombreClub">
+            <button>Eliminar</button>
+        </form>
+    </div>
+</body>
+</html>
