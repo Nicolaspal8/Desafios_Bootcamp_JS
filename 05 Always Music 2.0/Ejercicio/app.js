@@ -17,7 +17,7 @@ const registrar = async ({Nombre, RutActual, Curso, Nivel}) =>{
     try{
       const result = await pool.query( {
         rowMode: 'array',
-        text: `insert into usuarios(nombre, rut, curso, nivel) values ($1, $2, $3, $4);`
+        text: `insert into usuarios(nombre, rut, curso, nivel) values ($1, $2, $3, $4) RETURNING *;`
       }, [Nombre, RutActual, Curso, Nivel])
       console.log(result.rows)
       pool.end()
@@ -66,7 +66,7 @@ const update = async ({RutActual, Nombre, NuevoRut, Curso, Nivel}) =>{
   try{
     const result = await pool.query( {
       rowMode: 'array',
-      text: `UPDATE usuarios SET nombre = $1, rut = $2, curso = $3, nivel = $5 WHERE rut = $4;`
+      text: `UPDATE usuarios SET nombre = $1, rut = $2, curso = $3, nivel = $5 WHERE rut = $4 RETURNING *;`
     }, [Nombre, NuevoRut, Curso, RutActual, Nivel])
     console.log(result.rows)
     pool.end()
@@ -84,7 +84,7 @@ const deleteUser = async ({Rut}) =>{
   try{
     const result = await pool.query( {
       rowMode: 'array',
-      text: `DELETE FROM usuarios WHERE rut = $1;`}, [Rut])
+      text: `DELETE FROM usuarios WHERE rut = $1 RETURNING *;`}, [Rut])
     console.log(result.rows)
     pool.end()
     if(result.rowCount == 0){
