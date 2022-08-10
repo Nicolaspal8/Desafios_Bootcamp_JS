@@ -1,0 +1,11 @@
+
+{{>menu}}
+<h1 class="text-center">Bienvenido al mercado Web, seleccione sus productos</h1>
+<div class="container row my-4 m-auto">
+        {{#each frutas}}
+            <div class="col-4">
+                {{>productos nombre=this}}
+            </div>
+        {{/each}}
+</div>
+{{>modal}}
