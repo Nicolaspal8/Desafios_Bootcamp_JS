@@ -1,2 +1,1 @@
-# Importante
-+ Instalar paquetes mencionados en cada proyecto en el archivo paquetes
+# Desafios Bootcamp Full Stack JavaScript
