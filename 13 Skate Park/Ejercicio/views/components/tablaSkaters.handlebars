@@ -1,0 +1,30 @@
+  <table class="table w-50 m-auto">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Años de experiencia</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+            {{#each skaters}}
+                <tr>
+                    <th scope="row">{{@index}}</th>
+                    <td><img src="/public/img/{{this.foto}}" alt="foto-skater-{{this.nombre}}"></td>
+                    <td>{{this.nombre}}</td>
+                    <td>{{this.anos_experiencia}}</td>
+                    <td>{{this.especialidad}}</td>
+                    <td>
+                      <input value="{{this.id}}" class="check"
+                      {{#if ../admin}}
+                        onclick="cambiarEstado({{this.id}}, this)"
+                      {{else}}
+                        disabled
+                      {{/if}}  type="checkbox"{{#if this.estado}} checked {{/if}} /></td>
+                </tr>
+            {{/each}}
+        </tbody>
+      </table>
